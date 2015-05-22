@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms.Player.MainView"
+			 BackgroundColor="White">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="FontSize">
+					<OnPlatform x:TypeArguments="x:Double"
+								iOS="14"
+								Android="18" />
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid Padding="30, 40, 30, 10" RowSpacing="20">
+		<Grid.Padding>
+			<OnPlatform x:TypeArguments="Thickness"
+						iOS="30, 40, 20, 10"
+						Android="30, 40, 30, 10" />
+		</Grid.Padding>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Grid.ColumnSpan="2" XAlign="Center" FontAttributes="Bold" Text="Welcome to Xamarin Forms!">
+			<Label.FontSize>
+				<OnPlatform x:TypeArguments="x:Double"
+							iOS="20"
+							Android="26" />
+			</Label.FontSize>
+		</Label>
+		<Entry Grid.Row="1" Placeholder="Session ID" Text="{Binding SessionId}" IsEnabled="{Binding IsDisconnected}"
+			   HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black">
+			<Entry.Triggers>
+				<Trigger TargetType="Entry" Property="IsEnabled" Value="False">
+					<Setter Property="TextColor" Value="Gray" />
+				</Trigger>
+			</Entry.Triggers>
+		</Entry>
+		<Button Grid.Row="1" Grid.Column="1" Text="Connect" Command="{Binding ConnectCommand}" IsVisible="{Binding IsDisconnected}" />
+		<Button Grid.Row="1" Grid.Column="1" Text="Disconnect" Command="{Binding DisconnectCommand}" IsVisible="{Binding IsConnected}" />
+		<Label Grid.Row="2" FontAttributes="Bold" Text="What?" />
+		<StackLayout Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="Start">
+			<Label Text="This application works together with the Xamarin Forms Player extension for Visual Studio." />
+			<Label Text="You can open Visual Studio companion extension from the View | Other Windows | Xamarin Forms Player menu option." />
+			<Label Text="Once the Visual Studio extension is connected, take note of the Session ID displayed and enter it in the input box above to connect to it." />
+		</StackLayout>
+	</Grid>
+</ContentPage>

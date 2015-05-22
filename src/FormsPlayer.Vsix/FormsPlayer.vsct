@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Commands package="guidFormsPlayerPkg">
+		<Buttons>
+			<Button guid="guidFormsPlayerCmdSet" id="cmdXamarinFormsPlayer" priority="0x0100" type="Button">
+				<Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+				<Icon guid="Player.bmpGuid" id="Player.bmpId" />
+				<Strings>
+					<ButtonText>Xamarin Forms Player</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<Bitmaps>
+			<Bitmap guid="Player.bmpGuid" href="Resources\Player.bmp" usedList="Player.bmpId" />
+		</Bitmaps>
+
+	</Commands>
+
+	<Symbols>
+		<!-- This is the package guid. -->
+		<GuidSymbol name="guidFormsPlayerPkg" value="{4ab694d8-3cb1-44b0-988f-6b4b051135dc}" />
+
+		<!-- This is the guid used to group the menu commands together -->
+		<GuidSymbol name="guidFormsPlayerCmdSet" value="{65312fa3-fac2-44c8-8988-2d613557a876}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="cmdXamarinFormsPlayer" value="0x0101" />
+		</GuidSymbol>
+
+		<GuidSymbol name="Player.bmpGuid" value="{067F9207-671B-4C0D-AEEA-131FEA9929D9}">
+			<IDSymbol name="Player.bmpId" value="1" />
+		</GuidSymbol>
+	</Symbols>
+
+</CommandTable>

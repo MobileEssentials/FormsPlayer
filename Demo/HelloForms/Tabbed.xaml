@@ -1,0 +1,21 @@
+﻿<TabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	<TabbedPage.Children>
+		<ContentPage Title="Page 1" Padding="40">
+			<StackLayout>
+				<Label TextColor="Red" Text="{Binding Name}" />
+				<Label Text="{Binding Address.Street}" />
+				<Label Text="{Binding Address.Nro}" />
+			</StackLayout>
+		</ContentPage>
+		<ContentPage Title="Page 2" Padding="40">
+			<Label Text="{Binding Titulo2}" />
+		</ContentPage>
+		<ContentPage Title="Page 3" Padding="40">
+			<Label Text="{Binding Titulo3}" />
+		</ContentPage>
+	</TabbedPage.Children>
+
+</TabbedPage>

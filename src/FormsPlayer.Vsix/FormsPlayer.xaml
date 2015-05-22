@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:FormsPlayer="clr-namespace:Xamarin.Forms.Player" x:Class="Xamarin.Forms.Player.FormsPlayer"
+             Background="{DynamicResource VsBrush.Window}"
+             Foreground="{DynamicResource VsBrush.WindowText}"
+			 VerticalAlignment="Top"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="MyToolWindow">
+	<StackPanel>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<StackPanel Orientation="Vertical" Grid.Row="0">
+				<TextBlock HorizontalAlignment="Center" Margin="10">Session ID:</TextBlock>
+				<Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Content="{Binding SessionId, FallbackValue='SessionID'}" />
+			</StackPanel>
+			<StackPanel Grid.Row="1" Margin="10" Orientation="Horizontal" Height="45" HorizontalAlignment="Center">
+				<Button Content="Connect" Command="{Binding ConnectCommand}" Margin="5" Width="80" />
+				<Button Content="Disconnect" Command="{Binding DisconnectCommand}" Margin="5" Width="80" />
+			</StackPanel>
+		</Grid>
+	</StackPanel>
+</UserControl>

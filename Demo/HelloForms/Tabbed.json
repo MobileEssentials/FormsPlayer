@@ -1,0 +1,10 @@
+﻿{
+    "Name": "kzu",
+    "Titulo1": "Hola mundo",
+    "Titulo2": "Hola mundo2",
+    "Titulo3": "Hola mundo3",
+    "Address": {
+        "Street": "Diagnoal",
+        "Nro":  875
+    }
+}
