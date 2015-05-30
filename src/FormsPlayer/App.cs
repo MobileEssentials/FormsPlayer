@@ -64,7 +64,7 @@ namespace Xamarin.Forms.Player
 						}
 
 						if (!string.IsNullOrEmpty (viewModel.Json))
-							content.BindingContext = JModel.Parse (viewModel.Json);
+							content.BindingContext = JsonModel.Parse (viewModel.Json);
 
 						MainPage = content;
 					} catch (Exception ex) {

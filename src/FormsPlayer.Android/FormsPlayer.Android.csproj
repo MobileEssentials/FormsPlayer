@@ -88,9 +88,8 @@
       <HintPath>..\packages\Xamarin.Forms.1.4.3.6358-pre2\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Xamarin.Forms.Dynamic.0.1.10-pre\lib\MonoAndroid10\Xamarin.Forms.Dynamic.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Dynamic">
+      <HintPath>..\packages\Xamarin.Forms.Dynamic.0.1.13-pre\lib\MonoAndroid10\Xamarin.Forms.Dynamic.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

@@ -121,7 +121,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.Dynamic.0.1.10-pre\lib\Xamarin.iOS10\Xamarin.Forms.Dynamic.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.Dynamic.0.1.13-pre\lib\Xamarin.iOS10\Xamarin.Forms.Dynamic.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>FormsPlayer</string>
 	<key>CFBundleIdentifier</key>
-	<string>xamarin.forms.player</string>
+	<string>org.mobileessentials.FormsPlayer</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
