@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 						 Padding="40">
 
-	<ContentPage.BackgroundColor>
-		<OnPlatform x:TypeArguments="Color" Android="White" />
-	</ContentPage.BackgroundColor>
-
-	<ContentPage.Resources>
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color" Android="White" />
+    </ContentPage.BackgroundColor>
+	
+    <ContentPage.Resources>
 		<ResourceDictionary>
 			<Style TargetType="Label">
 				<Setter Property="TextColor">
