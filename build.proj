@@ -70,11 +70,12 @@
 		<ItemGroup>
 			<Package Include="*.nupkg" />
 			<Package Include="src\FormsPlayer.Vsix\bin\$(Configuration)\*.vsix" />
-			<Package Include="src\FormsPlayer.Android\bin\$(Configuration)\*.apk" />
+			<Apk Include="src\FormsPlayer.Android\bin\$(Configuration)\*-Signed.apk" />
 		</ItemGroup>
 
 		<MakeDir Condition="!Exists('out')" Directories="out" />
 		<Copy SourceFiles="@(Package)" DestinationFolder="out" />
+		<Copy SourceFiles="@(Apk)" DestinationFiles="out\XamarinFormsPlayer.apk" />
 		
 	</Target>
 	
