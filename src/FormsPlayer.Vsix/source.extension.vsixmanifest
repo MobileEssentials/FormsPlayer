@@ -5,7 +5,7 @@
 		<DisplayName>Xamarin Forms Player</DisplayName>
 		<Description>Preview Xamarin.Forms XAML on devices and simulators, with support for data-binding via JSON dummy view models.</Description>
 		<Icon>Resources\Preview.png</Icon>
-		<Tags>xamarin</Tags>
+		<Tags>XAML, xamarin, xamarin.forms</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false">
 		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />

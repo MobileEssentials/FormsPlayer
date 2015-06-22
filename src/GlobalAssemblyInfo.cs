@@ -25,7 +25,7 @@ using Xamarin.Forms.Player;
 
 namespace Xamarin.Forms.Player
 {
-	public partial class ThisAssembly
+	partial class ThisAssembly
 	{
 		public const string Version = ThisAssembly.Git.BaseVersion.Major + "." + ThisAssembly.Git.BaseVersion.Minor + "." +  ThisAssembly.Git.BaseVersion.Patch + "." + ThisAssembly.Git.Commits;
 		public const string FileVersion = Version;

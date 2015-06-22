@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Xamarin.Forms.Player</id>
-		<version>0.1.5-pre</version>
+		<version>0.1.6-pre</version>
 		<authors>Daniel Cazzulino</authors>
 		<owners>Daniel Cazzulino</owners>
 		<licenseUrl>http://www.mobileessentials.org/license</licenseUrl>
