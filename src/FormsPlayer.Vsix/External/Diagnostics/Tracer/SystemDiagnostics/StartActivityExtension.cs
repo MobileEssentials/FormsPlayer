@@ -87,7 +87,7 @@ namespace Xamarin.Forms.Player.Diagnostics
                 newId = Guid.NewGuid();
                 oldId = Trace.CorrelationManager.ActivityId;
 
-                tracer.Trace(TraceEventType.Transfer, this.newId);
+                tracer.Trace(TraceEventType.Transfer, newId);
                 Trace.CorrelationManager.ActivityId = newId;
 
                 // The XmlWriterTraceListener expects Start/Stop events to receive an XPathNavigator 
@@ -98,14 +98,14 @@ namespace Xamarin.Forms.Player.Diagnostics
 
             public void Dispose()
             {
-                if (!this.disposed)
+                if (!disposed)
                 {
                     tracer.Trace(TraceEventType.Stop, new ActivityData(displayName, false));
                     tracer.Trace(TraceEventType.Transfer, oldId);
                     Trace.CorrelationManager.ActivityId = oldId;
                 }
 
-                this.disposed = true;
+				disposed = true;
             }
 
             class ActivityData : XPathNavigator
@@ -117,9 +117,9 @@ namespace Xamarin.Forms.Player.Diagnostics
                 {
                     this.displayName = displayName;
 
-                    // The particular XML format expected by the Service Trace Viewer was 
-                    // inferred from the actual tool behavior and usage.
-                    this.xml = XDocument.Parse(string.Format(@"
+					// The particular XML format expected by the Service Trace Viewer was 
+					// inferred from the actual tool behavior and usage.
+					xml = XDocument.Parse(string.Format(@"
         <TraceRecord xmlns='http://schemas.microsoft.com/2004/10/E2ETraceEvent/TraceRecord' Severity='{0}'>
             <TraceIdentifier>http://msdn.microsoft.com/en-US/library/System.ServiceModel.Diagnostics.ActivityBoundary.aspx</TraceIdentifier>
             <Description>Activity boundary.</Description>

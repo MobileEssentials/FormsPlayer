@@ -15,14 +15,19 @@
 			<Grid.RowDefinitions>
 				<RowDefinition />
 				<RowDefinition />
+				<RowDefinition />
 			</Grid.RowDefinitions>
 			<StackPanel Orientation="Vertical" Grid.Row="0">
 				<TextBlock HorizontalAlignment="Center" Margin="10">Session ID:</TextBlock>
-				<Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Content="{Binding SessionId, FallbackValue='SessionID'}" />
+				<TextBox HorizontalAlignment="Center" TextAlignment="Center" MinWidth="120" FontSize="22" FontWeight="Bold" Text="{Binding SessionId, Mode=TwoWay, FallbackValue='SessionID'}" />
+				<Label HorizontalAlignment="Center" ContentStringFormat="{}({0:N0} connected clients)" Content="{Binding Clients, FallbackValue='5'}" />
 			</StackPanel>
 			<StackPanel Grid.Row="1" Margin="10" Orientation="Horizontal" Height="45" HorizontalAlignment="Center">
 				<Button Content="Connect" Command="{Binding ConnectCommand}" Margin="5" Width="80" />
 				<Button Content="Disconnect" Command="{Binding DisconnectCommand}" Margin="5" Width="80" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Grid.Row="2">
+				<TextBlock Margin="10" TextWrapping="Wrap">To push XAML or JSON to the connected devices, just open the document and save it.</TextBlock>
 			</StackPanel>
 		</Grid>
 	</StackPanel>

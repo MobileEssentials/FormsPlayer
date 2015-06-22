@@ -13,10 +13,10 @@ namespace Xamarin.Forms.Player
         }
 
 		[ImportingConstructor]
-		public FormsPlayer (FormsPlayerViewModel service)
+		public FormsPlayer (FormsPlayerViewModel model)
 			: this()
 		{
-			DataContext = service;
+			DataContext = model;
 		}
 	}
 }

@@ -10,10 +10,10 @@ namespace Xamarin.Forms.Player
 		public FormsPlayerWindow () :
 			base (null)
 		{
-			this.Caption = Resources.ToolWindowTitle;
+			Caption = Resources.ToolWindowTitle;
 
-			this.BitmapResourceID = 300;
-			this.BitmapIndex = 1;
+			BitmapResourceID = 300;
+			BitmapIndex = 1;
 
 			base.Content = ComponentModel.GlobalComponents.GetService<FormsPlayer> ();
 		}

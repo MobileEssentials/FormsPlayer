@@ -103,7 +103,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         {
             return new AggregateTracer(this, name, CompositeFor(name)
                 .Select(tracerName => new DiagnosticsTracer(
-                    this.GetOrAdd(tracerName, sourceName => CreateSource(sourceName)))));
+					GetOrAdd (tracerName, sourceName => CreateSource(sourceName)))));
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         /// </summary>
         public TraceSource GetSource(string name)
         {
-            return this.GetOrAdd(name, sourceName => CreateSource(sourceName));
+            return GetOrAdd (name, sourceName => CreateSource(sourceName));
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         /// </summary>
         public void AddListener(string sourceName, TraceListener listener)
         {
-            this.GetOrAdd(sourceName, name => CreateSource(name)).Listeners.Add(listener);
+			GetOrAdd (sourceName, name => CreateSource(name)).Listeners.Add(listener);
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         /// </summary>
         public void RemoveListener(string sourceName, TraceListener listener)
         {
-            this.GetOrAdd(sourceName, name => CreateSource(name)).Listeners.Remove(listener);
+			GetOrAdd (sourceName, name => CreateSource(name)).Listeners.Remove(listener);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         /// </summary>
         public void RemoveListener(string sourceName, string listenerName)
         {
-            this.GetOrAdd(sourceName, name => CreateSource(name)).Listeners.Remove(listenerName);
+			GetOrAdd (sourceName, name => CreateSource(name)).Listeners.Remove(listenerName);
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Xamarin.Forms.Player.Diagnostics
         /// </summary>
         public void SetTracingLevel(string sourceName, SourceLevels level)
         {
-            this.GetOrAdd(sourceName, name => CreateSource(name)).Switch.Level = level;
+			GetOrAdd (sourceName, name => CreateSource(name)).Switch.Level = level;
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace Xamarin.Forms.Player.Diagnostics
 
             public override string ToString()
             {
-                return "Aggregate for " + this.name;
+                return "Aggregate for " + name;
             }
         }
 
@@ -412,7 +412,7 @@ namespace Xamarin.Forms.Player.Diagnostics
                 public SourceNameReplacer(TraceSource source, string sourceName)
                 {
                     this.source = source;
-                    this.originalName = source.Name;
+					originalName = source.Name;
 
                     // Transient change of the source name while the trace call 
                     // is issued. Multi-threading might still cause messages to come 

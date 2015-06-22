@@ -31,8 +31,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD1F1C7C-4D35-47B1-83A6-598B3AA2EDEC}"
 	ProjectSection(SolutionItems) = preProject
 		..\build.proj = ..\build.proj
+		GitInfo.txt = GitInfo.txt
 		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 		Xamarin.Forms.Player.nuspec = Xamarin.Forms.Player.nuspec
+		Xamarin.Forms.Player.props = Xamarin.Forms.Player.props
+		Xamarin.Forms.Player.targets = Xamarin.Forms.Player.targets
 	EndProjectSection
 EndProject
 Global

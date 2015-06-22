@@ -18,7 +18,7 @@ namespace Xamarin.Forms.Player
 	{
 		void ShowToolWindow (object sender, EventArgs e)
 		{
-			var window = this.FindToolWindow (typeof (FormsPlayerWindow), 0, true);
+			var window = FindToolWindow (typeof (FormsPlayerWindow), 0, true);
 			if ((null == window) || (null == window.Frame)) {
 				throw new NotSupportedException (Resources.CanNotCreateWindow);
 			}
@@ -32,7 +32,7 @@ namespace Xamarin.Forms.Player
 			base.Initialize ();
 
 			var manager = new TracerManager();
-			manager.SetTracingLevel (this.GetType().Namespace, SourceLevels.Information);
+			manager.SetTracingLevel (GetType ().Namespace, SourceLevels.Information);
 			Tracer.Initialize (manager);
 
 			Tracer.Get<FormsPlayerPackage> ().Info ("!Xamarin Forms Player Initialized");

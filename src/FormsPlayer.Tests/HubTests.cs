@@ -5,9 +5,11 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.AspNet.SignalR.Client;
+using Xamarin.Forms.Player;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -32,15 +34,18 @@ namespace FormsPlayer.Tests
 		public async Task EndToEndHub ()
 		{
 			var sessionId = Guid.NewGuid().ToString();
+			var clients = 0;
 
-			var pubConn = new HubConnection("http://formsplayer.azurewebsites.net/");
+			var pubConn = new HubConnection(ThisAssembly.HubUrl);
 			var pubProxy = pubConn.CreateHubProxy("FormsPlayer");
 
-			var subConn = new HubConnection("http://formsplayer.azurewebsites.net/");
+			var subConn = new HubConnection(ThisAssembly.HubUrl);
 			var subProxy = subConn.CreateHubProxy("FormsPlayer");
 
 			var xamls = new List<string>();
 			var jsons = new List<string>();
+
+			pubProxy.On<int> ("Connected", count => clients = count);
 
 			subProxy.On<string> ("Xaml", xaml => xamls.Add (xaml));
 			subProxy.On<string> ("Json", json => jsons.Add (json));
@@ -48,7 +53,13 @@ namespace FormsPlayer.Tests
 			await pubConn.Start ();
 			await subConn.Start ();
 
+			await pubProxy.Invoke ("Join", sessionId);
 			await subProxy.Invoke ("Join", sessionId);
+
+			SpinWait.SpinUntil (() => clients == 2, 1000);
+
+			// Count will be 1+ than actual "clients", since the publisher/VS is also a client.
+			Assert.Equal (2, clients);
 
 			await pubProxy.Invoke ("Xaml", sessionId, "xaml");
 			await pubProxy.Invoke ("Xaml", Guid.NewGuid ().ToString (), "xaml");
@@ -60,6 +71,11 @@ namespace FormsPlayer.Tests
 
 			Assert.Equal ("xaml", xamls[0]);
 			Assert.Equal ("json", jsons[0]);
+
+			subConn.Dispose ();
+
+			SpinWait.SpinUntil (() => clients == 1, 1000);
+			Assert.Equal (1, clients);
 		}
 	}
 }

@@ -28,9 +28,12 @@ namespace Xamarin.Forms.Player
 
 		HubConnection connection;
 		IHubProxy proxy;
+		IDisposable onConnected;
 		DocumentEvents events;
 		bool isConnected;
 		string status;
+		string sessionId;
+		int clients;
 
 		[ImportingConstructor]
 		public FormsPlayerViewModel ([Import (typeof (SVsServiceProvider))] IServiceProvider services)
@@ -55,9 +58,11 @@ namespace Xamarin.Forms.Player
 
 		public ICommand DisconnectCommand { get; private set; }
 
-		public string SessionId { get; private set; }
+		public int Clients { get { return clients; } set { SetProperty (ref clients, value, "Clients"); } }
 
 		public bool IsConnected { get { return isConnected; } set { SetProperty (ref isConnected, value, "IsConnected"); } }
+
+		public string SessionId { get { return sessionId; } set { SetProperty (ref sessionId, value, "SessionId"); } }
 
 		public string Status { get { return status; } set { SetProperty (ref status, value, "Status"); } }
 
@@ -127,11 +132,13 @@ namespace Xamarin.Forms.Player
 		void Connect ()
 		{
 			IsConnected = false;
-			connection = new HubConnection ("http://formsplayer.azurewebsites.net/");
+			connection = new HubConnection (ThisAssembly.HubUrl);
 			proxy = connection.CreateHubProxy ("FormsPlayer");
 
 			try {
+				onConnected = proxy.On<int> ("Connected", count => Clients = count - 1);
 				connection.Start ().Wait (3000);
+				proxy.Invoke ("Join", SessionId);
 				IsConnected = true;
 				Status = "Successfully connected to FormsPlayer";
 			} catch (Exception e) {
@@ -142,6 +149,7 @@ namespace Xamarin.Forms.Player
 
 		void Disconnect ()
 		{
+			onConnected.Dispose ();
 			connection.Stop ();
 			connection.Dispose ();
 			connection = null;
@@ -154,12 +162,26 @@ namespace Xamarin.Forms.Player
 			if (!Object.Equals (field, value)) {
 				field = value;
 				PropertyChanged (this, new PropertyChangedEventArgs (name));
+				switch (name) {
+					case "IsConnected":
+						// On disconnection, reset clients count.
+						if (!isConnected)
+							Clients = 0;
+						break;
+					case "SessionId":
+						// If connected and session Id changed, disconnect.
+						if (isConnected)
+							Disconnect ();
+						break;
+					default:
+						break;
+				}
 			}
 		}
 
 		void OnTaskException (object sender, UnobservedTaskExceptionEventArgs e)
 		{
-			tracer.Error (e.Exception.GetBaseException ().InnerException, "!Background task exception.");
+			tracer.Error (e.Exception.GetBaseException ().InnerException, "Background task exception.");
 			e.SetObserved ();
 		}
 	}

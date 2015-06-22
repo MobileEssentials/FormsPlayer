@@ -83,7 +83,7 @@ internal static class AppDomainData
 
 		public void Dispose()
 		{
-			this.domain.SetData(typeof(T).FullName, this.oldData);
+			domain.SetData(typeof(T).FullName, oldData);
 		}
 	}
 }
