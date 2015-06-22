@@ -18,7 +18,8 @@
 			</Grid.RowDefinitions>
 			<StackPanel Orientation="Vertical" Grid.Row="0">
 				<TextBlock HorizontalAlignment="Center" Margin="10">Session ID:</TextBlock>
-				<Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Content="{Binding SessionId, FallbackValue='SessionID'}" />
+				<TextBox HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Text="{Binding SessionId, Mode=TwoWay, FallbackValue='SessionID'}" />
+				<Label HorizontalAlignment="Center" Content="{Binding Clients, StringFormat='({}{0:N0} connected clients)', FallbackValue='(0 connected clients)'}" />
 			</StackPanel>
 			<StackPanel Grid.Row="1" Margin="10" Orientation="Horizontal" Height="45" HorizontalAlignment="Center">
 				<Button Content="Connect" Command="{Binding ConnectCommand}" Margin="5" Width="80" />
