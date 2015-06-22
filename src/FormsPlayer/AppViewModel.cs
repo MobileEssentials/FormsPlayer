@@ -92,7 +92,11 @@ namespace Xamarin.Forms.Player
 				IsConnected = true;
 				Status = "Successfully connected to FormsPlayer";
 			} catch (Exception e) {
-				Status = "Error connecting to FormsPlayer: " + e.Message;
+				var message = e.Message;
+				if (e is AggregateException)
+					message = ((AggregateException)e).InnerException.Message;
+
+				Status = "Error connecting to FormsPlayer: " + message;
 				connection.Dispose ();
 			}
 		}

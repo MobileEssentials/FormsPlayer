@@ -55,6 +55,7 @@
 			<Label Text="This application works together with the Xamarin Forms Player extension for Visual Studio." />
 			<Label Text="You can open Visual Studio companion extension from the View | Other Windows | Xamarin Forms Player menu option." />
 			<Label Text="Once the Visual Studio extension is connected, take note of the Session ID displayed and enter it in the input box above to connect to it." />
-		</StackLayout>
+            <Label Text="{Binding Status}" />
+        </StackLayout>
 	</Grid>
 </ContentPage>
