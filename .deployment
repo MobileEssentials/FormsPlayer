@@ -1,2 +1,3 @@
 [config]
 project = src/FormsPlayer.Web/FormsPlayer.Web.csproj
+SCM_BUILD_ARGS=-p:Configuration=Debug
