@@ -80,7 +80,7 @@ namespace Xamarin.Forms.Player
 		void Connect ()
 		{
 			IsConnected = false;
-			connection = new HubConnection ("http://formsplayer.azurewebsites.net/");
+			connection = new HubConnection (ThisAssembly.HubUrl);
 			var proxy = connection.CreateHubProxy("FormsPlayer");
 
 			proxy.On<string> ("Xaml", xaml => Xaml = xaml);

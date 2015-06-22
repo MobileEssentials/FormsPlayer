@@ -22,7 +22,7 @@ namespace Xamarin.Forms.Player
 			Clients.Group (sessionId).Json (payload);
 		}
 
-		public Task Join (string sessionId)
+		public async Task Join (string sessionId)
 		{
 			// One XF player client can only be connected to one group at a time.
 			clientSessionMap.AddOrUpdate (Context.ConnectionId, _ => sessionId, (_, __) => sessionId);
@@ -41,10 +41,10 @@ namespace Xamarin.Forms.Player
 					return session;
 				});
 
+			await Groups.Add (Context.ConnectionId, sessionId);
+
 			// Notify VS of the new list of clients.
 			Clients.Group (sessionId).Connected (clients.Count);
-
-			return Groups.Add (Context.ConnectionId, sessionId);
 		}
 
 		public override Task OnDisconnected (bool stopCalled)

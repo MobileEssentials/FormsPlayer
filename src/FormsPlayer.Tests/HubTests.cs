@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.AspNet.SignalR.Client;
+using Xamarin.Forms.Player;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -16,12 +17,6 @@ namespace FormsPlayer.Tests
 {
 	public class HubTests
 	{
-#if DEBUG
-		const string HubUrl = "http://formsplayer-dev.azurewebsites.net/";
-#else
-		const string HubUrl = "http://formsplayer.azurewebsites.net/";
-#endif
-
 		private ITestOutputHelper output;
 
 		public HubTests (ITestOutputHelper output)
@@ -41,10 +36,10 @@ namespace FormsPlayer.Tests
 			var sessionId = Guid.NewGuid().ToString();
 			var clients = 0;
 
-			var pubConn = new HubConnection(HubUrl);
+			var pubConn = new HubConnection(ThisAssembly.HubUrl);
 			var pubProxy = pubConn.CreateHubProxy("FormsPlayer");
 
-			var subConn = new HubConnection(HubUrl);
+			var subConn = new HubConnection(ThisAssembly.HubUrl);
 			var subProxy = subConn.CreateHubProxy("FormsPlayer");
 
 			var xamls = new List<string>();

@@ -132,14 +132,15 @@ namespace Xamarin.Forms.Player
 		void Connect ()
 		{
 			IsConnected = false;
-			connection = new HubConnection ("http://formsplayer.azurewebsites.net/");
+			connection = new HubConnection (ThisAssembly.HubUrl);
 			proxy = connection.CreateHubProxy ("FormsPlayer");
 
 			try {
+				onConnected = proxy.On<int> ("Connected", count => Clients = count - 1);
 				connection.Start ().Wait (3000);
+				proxy.Invoke ("Join", SessionId);
 				IsConnected = true;
 				Status = "Successfully connected to FormsPlayer";
-				onConnected = proxy.On<int> ("Connected", count => Clients = count - 1);
 			} catch (Exception e) {
 				Status = "Error connecting to FormsPlayer: " + e.Message;
 				connection.Dispose ();
@@ -148,6 +149,7 @@ namespace Xamarin.Forms.Player
 
 		void Disconnect ()
 		{
+			onConnected.Dispose ();
 			connection.Stop ();
 			connection.Dispose ();
 			connection = null;
