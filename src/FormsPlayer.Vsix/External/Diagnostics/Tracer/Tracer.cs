@@ -143,7 +143,7 @@ namespace Xamarin.Forms.Player.Diagnostics
                 {
                     System.Diagnostics.Debug.Write(string.Format(
                         "[{0}::{1}] ",
-                        this.name, type, message));
+						name, type, message));
                     System.Diagnostics.Debug.WriteLine(message);
                 }
 

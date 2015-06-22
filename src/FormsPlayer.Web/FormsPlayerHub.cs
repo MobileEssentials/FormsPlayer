@@ -59,6 +59,11 @@ namespace Xamarin.Forms.Player
 
 				// Notify VS of the updated list of clients.
 				Clients.Group (sessionId).Connected (session.Count);
+
+				// If there are no more clients in the given session, remove the dictionary, 
+				// to avoid memory leaks.
+				if (session.Count == 0)
+					sessionClients.TryRemove (sessionId, out session);
 			}
 
 			return base.OnDisconnected (stopCalled);

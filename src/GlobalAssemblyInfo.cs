@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Resources;
+using Xamarin.Forms.Player;
 
 [assembly: AssemblyCompany("Mobile Essentials")]
 [assembly: AssemblyProduct("Xamarin.Forms.Player")]
@@ -17,5 +18,17 @@ using System.Resources;
 [assembly: AssemblyConfiguration("RELEASE")]
 #endif
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(ThisAssembly.Version)]
+[assembly: AssemblyFileVersion(ThisAssembly.FileVersion)]
+[assembly: AssemblyInformationalVersion(ThisAssembly.InformationalVersion)]
+
+
+namespace Xamarin.Forms.Player
+{
+	public partial class ThisAssembly
+	{
+		public const string Version = ThisAssembly.Git.BaseVersion.Major + "." + ThisAssembly.Git.BaseVersion.Minor + "." +  ThisAssembly.Git.BaseVersion.Patch + "." + ThisAssembly.Git.Commits;
+		public const string FileVersion = Version;
+		public const string InformationalVersion = Version + "-" + ThisAssembly.Git.Branch + "+" + ThisAssembly.Git.Commit;
+	}
+}

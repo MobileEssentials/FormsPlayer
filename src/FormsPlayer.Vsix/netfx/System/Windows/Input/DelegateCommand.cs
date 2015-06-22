@@ -66,7 +66,7 @@ internal class DelegateCommand : ICommand
     /// </summary>
     public bool CanExecute(object parameter)
     {
-        return this.canExecute();
+        return canExecute ();
     }
 
     /// <summary>
@@ -74,9 +74,9 @@ internal class DelegateCommand : ICommand
     /// </summary>
     public void Execute(object parameter)
     {
-        if (this.CanExecute(parameter))
+        if (CanExecute (parameter))
         {
-            this.execute();
+			execute ();
         }
     }
 }
@@ -126,7 +126,7 @@ public class DelegateCommand<T> : ICommand
     /// </summary>
     public bool CanExecute(object parameter)
     {
-        return this.canExecute((T)parameter);
+        return canExecute ((T)parameter);
     }
 
     /// <summary>
@@ -134,9 +134,9 @@ public class DelegateCommand<T> : ICommand
     /// </summary>
     public void Execute(object parameter)
     {
-        if (this.CanExecute(parameter))
+        if (CanExecute (parameter))
         {
-            this.execute((T)parameter);
+			execute ((T)parameter);
         }
     }
 }

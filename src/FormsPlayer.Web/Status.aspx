@@ -1,14 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Status.aspx.cs" Inherits="Xamarin.Forms.Player.Status" %>
+﻿<%@ Page Language="C#" %>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>Status</title>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
-        <%= typeof(Microsoft.AspNet.SignalR.Hub).AssemblyQualifiedName %>
+        <p>
+        FormsPlayer: <%= Xamarin.Forms.Player.ThisAssembly.Version %>
+        </p>
+        <p>
+        SignalR: <%= typeof(Microsoft.AspNet.SignalR.Hub).Assembly.GetName().Version %>
+        </p>
     </div>
-    </form>
 </body>
 </html>

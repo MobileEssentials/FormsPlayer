@@ -139,7 +139,7 @@ namespace Xamarin.Forms.Player
 				connection.Start ().Wait (3000);
 				IsConnected = true;
 				Status = "Successfully connected to FormsPlayer";
-				onConnected = proxy.On<int> ("Connected", count => this.Clients = count);
+				onConnected = proxy.On<int> ("Connected", count => Clients = count - 1);
 			} catch (Exception e) {
 				Status = "Error connecting to FormsPlayer: " + e.Message;
 				connection.Dispose ();
@@ -179,7 +179,7 @@ namespace Xamarin.Forms.Player
 
 		void OnTaskException (object sender, UnobservedTaskExceptionEventArgs e)
 		{
-			tracer.Error (e.Exception.GetBaseException ().InnerException, "!Background task exception.");
+			tracer.Error (e.Exception.GetBaseException ().InnerException, "Background task exception.");
 			e.SetObserved ();
 		}
 	}
