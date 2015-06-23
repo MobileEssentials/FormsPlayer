@@ -1,0 +1,13 @@
+﻿{
+    "Simple": [ "Red", "Blue" ],
+    "Complex":  [
+        {
+            "Id": "asfasdfasdf",
+            "FriendlyName": "Red"
+        },
+        {
+            "Id": "qwerqweriu",
+            "FriendlyName": "Blue"
+        }
+    ]
+}
