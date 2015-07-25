@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="Xamarin.Forms.Player" Version="0.1.6" Language="en-US" Publisher="Mobile Essentials" />
+		<Identity Id="Xamarin.Forms.Player" Version="0.1.7" Language="en-US" Publisher="Mobile Essentials" />
 		<DisplayName>Xamarin Forms Player</DisplayName>
 		<Description>Preview Xamarin.Forms XAML on devices and simulators, with support for data-binding via JSON dummy view models.</Description>
 		<Icon>Resources\Preview.png</Icon>

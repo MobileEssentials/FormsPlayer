@@ -11,7 +11,9 @@ using System.Xml;
 using System.Xml.Linq;
 using EnvDTE;
 using Microsoft.AspNet.SignalR.Client;
+using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Settings;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms.Player.Diagnostics;
@@ -22,6 +24,9 @@ namespace Xamarin.Forms.Player
 	[Export]
 	public class FormsPlayerViewModel : INotifyPropertyChanged
 	{
+		const string SettingsPath = "Xamarin\\FormsPlayer";
+		const string SettingsKey = "LastSessionId";
+
 		static readonly ITracer tracer = Tracer.Get<FormsPlayerViewModel>();
 
 		public event PropertyChangedEventHandler PropertyChanged = (sender, args) => { };
@@ -34,6 +39,7 @@ namespace Xamarin.Forms.Player
 		string status;
 		string sessionId;
 		int clients;
+		WritableSettingsStore settings;
 
 		[ImportingConstructor]
 		public FormsPlayerViewModel ([Import (typeof (SVsServiceProvider))] IServiceProvider services)
@@ -43,13 +49,23 @@ namespace Xamarin.Forms.Player
 			events = services.GetService<DTE> ().Events.DocumentEvents;
 			events.DocumentSaved += document => Publish (document.FullName);
 
-			// Initialize SessionId from MAC address.
-			var mac = NetworkInterface.GetAllNetworkInterfaces()
-				.Where(nic => nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-				.Select(nic => nic.GetPhysicalAddress().ToString())
-				.First();
+			var manager = new ShellSettingsManager(services);
+			settings = manager.GetWritableSettingsStore(SettingsScope.UserSettings);
+			if (!settings.CollectionExists (SettingsPath))
+				settings.CreateCollection (SettingsPath);
+			if (settings.PropertyExists(SettingsPath, SettingsKey))
+				SessionId = settings.GetString(SettingsPath, SettingsKey, "");
 
-			SessionId = NaiveBijective.Encode (NaiveBijective.Decode (mac));
+			if (string.IsNullOrEmpty(SessionId))
+			{
+				// Initialize SessionId from MAC address.
+				var mac = NetworkInterface.GetAllNetworkInterfaces()
+					.Where(nic => nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+					.Select(nic => nic.GetPhysicalAddress().ToString())
+					.First();
+
+				SessionId = NaiveBijective.Encode (NaiveBijective.Decode (mac));
+			}
 
 			TaskScheduler.UnobservedTaskException += OnTaskException;
 		}
@@ -172,6 +188,9 @@ namespace Xamarin.Forms.Player
 						// If connected and session Id changed, disconnect.
 						if (isConnected)
 							Disconnect ();
+
+						// Always save the last-used session id.
+						settings.SetString (SettingsPath, SettingsKey, SessionId);
 						break;
 					default:
 						break;
