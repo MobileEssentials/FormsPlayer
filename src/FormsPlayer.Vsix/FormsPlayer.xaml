@@ -10,6 +10,9 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              x:Name="MyToolWindow">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVis"/>
+    </UserControl.Resources>
 	<StackPanel>
 		<Grid>
 			<Grid.RowDefinitions>
@@ -30,5 +33,6 @@
 				<TextBlock Margin="10" TextWrapping="Wrap">To push XAML or JSON to the connected devices, just open the document and save it.</TextBlock>
 			</StackPanel>
 		</Grid>
-	</StackPanel>
+        <FormsPlayer:LoadingSpinner VerticalAlignment="Center" Visibility="{Binding IsConnecting, Converter={StaticResource boolToVis}}"/>
+    </StackPanel>
 </UserControl>

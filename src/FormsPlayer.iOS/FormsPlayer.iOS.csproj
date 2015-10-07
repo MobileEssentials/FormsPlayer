@@ -98,12 +98,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Refractored.Xam.Settings, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Settings.1.5.1\lib\Xamarin.iOS10\Refractored.Xam.Settings.dll</HintPath>
+    <Reference Include="Refractored.Xam.Settings, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Settings.1.5.2\lib\Xamarin.iOS10\Refractored.Xam.Settings.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Refractored.Xam.Settings.Abstractions, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Settings.1.5.1\lib\Xamarin.iOS10\Refractored.Xam.Settings.Abstractions.dll</HintPath>
+    <Reference Include="Refractored.Xam.Settings.Abstractions, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Settings.1.5.2\lib\Xamarin.iOS10\Refractored.Xam.Settings.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -117,8 +117,8 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.Forms.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.1.4.3.6358-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Core, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -126,15 +126,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.1.4.3.6358-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.iOS, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.1.4.3.6358-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.1.4.3.6358-pre2\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Xaml, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
@@ -204,6 +204,7 @@
     <Compile Include="Main.cs" />
     <Content Include="Info.plist" />
     <Content Include="Entitlements.plist" />
+    <Content Include="PluginsHelp\SettingsReadme.txt" />
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -211,16 +212,16 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\Xamarin.Forms.Player.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.3.6358-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
-  <Import Project="..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" />
+  <Import Project="..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

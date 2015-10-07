@@ -20,6 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,12 +143,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" />
+  <Import Project="..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

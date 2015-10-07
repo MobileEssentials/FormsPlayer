@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 BackgroundColor="White">
     <StackLayout>
-        <Label Text="Lists:" />
+        <Label Text="Listas:" />
         <ListView ItemsSource="{Binding Complex}">
             <ListView.ItemTemplate>
                 <DataTemplate>

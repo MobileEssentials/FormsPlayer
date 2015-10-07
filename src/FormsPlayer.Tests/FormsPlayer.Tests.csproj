@@ -97,12 +97,12 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props'))" />
-    <Error Condition="!Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
-  <Import Project="..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" />
+  <Import Project="..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" />
 </Project>

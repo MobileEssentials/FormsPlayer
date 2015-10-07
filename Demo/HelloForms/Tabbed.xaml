@@ -5,6 +5,7 @@
 	<TabbedPage.Children>
 		<ContentPage Title="Page 1" Padding="40">
 			<StackLayout>
+        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat." />
 				<Label TextColor="Red" Text="{Binding Name}" />
 				<Label Text="{Binding Address.Street}" />
 				<Label Text="{Binding Address.Nro}" />

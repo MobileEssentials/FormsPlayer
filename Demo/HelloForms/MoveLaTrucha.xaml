@@ -1,49 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-						 Padding="40">
+             Padding="40">
 
-    <ContentPage.BackgroundColor>
-        <OnPlatform x:TypeArguments="Color" Android="White" />
-    </ContentPage.BackgroundColor>
-	
-    <ContentPage.Resources>
-		<ResourceDictionary>
-			<Style TargetType="Label">
-				<Setter Property="TextColor">
-					<OnPlatform x:TypeArguments="Color" Android="Black" />
-				</Setter>
-			</Style>
-		</ResourceDictionary>
-	</ContentPage.Resources>
+  <ContentPage.BackgroundColor>
+    <OnPlatform x:TypeArguments="Color" Android="White" />
+  </ContentPage.BackgroundColor>
 
-	<StackLayout Padding="0, 20, 0, 0">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor">
+          <OnPlatform x:TypeArguments="Color" Android="Black" />
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
-		<Image Source="http://www.blueberg.com.ar/image/fish/rio/trucha.jpg"
+  <StackLayout Padding="0, 20, 0, 0">
+
+    <Image Source="http://www.blueberg.com.ar/image/fish/rio/trucha.jpg"
 			 Rotation="{Binding Rotate}"
 			 Scale="{Binding Scale}"
 			 HeightRequest="300"/>
 
-		<Slider Maximum="360"
+    <Slider Maximum="360"
 				Value="{Binding Rotate, Mode=TwoWay}"
 				VerticalOptions="CenterAndExpand" />
 
-		<Slider Maximum="4"
+    <Slider Maximum="2" Minimum="1"
 				Value="{Binding Scale, Mode=TwoWay}"
 				VerticalOptions="CenterAndExpand" />
 
-		<Label Text="{Binding Rotate, StringFormat='The angle is {0:F0} degrees'}"
+    <Label Text="{Binding Rotate, StringFormat='The angle is {0:F0} degrees'}"
 					 FontAttributes="Bold"
 					 FontSize="Large"
 					 HorizontalOptions="Center"
 					 VerticalOptions="CenterAndExpand" />
 
-		<Label Text="{Binding Scale, StringFormat='The scale is {0:F1}x'}"
+    <Label Text="{Binding Scale, StringFormat='The scale is {0:F1}x'}"
 					 FontAttributes="Bold"
 					 FontSize="Large"
 					 HorizontalOptions="Center"
 					 VerticalOptions="CenterAndExpand" />
 
-	</StackLayout>
-	
+  </StackLayout>
+
 </ContentPage>

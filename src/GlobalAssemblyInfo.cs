@@ -31,10 +31,6 @@ namespace Xamarin.Forms.Player
 		public const string FileVersion = Version;
 		public const string InformationalVersion = Version + "-" + ThisAssembly.Git.Branch + "+" + ThisAssembly.Git.Commit;
 
-#if DEBUG
-		public const string HubUrl = "http://formsplayer-dev.azurewebsites.net/";
-#else
 		public const string HubUrl = "http://formsplayer.azurewebsites.net/";
-#endif
 	}
 }

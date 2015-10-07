@@ -1,5 +1,6 @@
 ﻿{
-    "SessionId": "5d33bk",
-    "IsConnected": true,
-    "IsDisconnected":  true
+  "SessionId": "5d33bk",
+  "IsConnected": false,
+  "IsDisconnected": true,
+  "Status": "FAILED MISERABLY"
 }

@@ -20,6 +20,8 @@
     <StartArguments>/rootSuffix Exp</StartArguments>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <TargetVsixContainerName>XamarinFormsPlayer.vsix</TargetVsixContainerName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,10 +47,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=$(VisualStudioVersion).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
-    <Reference Include="Microsoft.VisualStudio.Settings.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
-    <Reference Include="Microsoft.VisualStudio.Shell.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Settings.$(VisualStudioVersion), Version=$(VisualStudioVersion).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualStudio.Shell.$(VisualStudioVersion), Version=$(VisualStudioVersion).0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
@@ -153,6 +155,9 @@
     </Compile>
     <Compile Include="FormsPlayerWindow.cs" />
     <Compile Include="Guids.cs" />
+    <Compile Include="LoadingSpinner.xaml.cs">
+      <DependentUpon>LoadingSpinner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NaiveBijective.cs" />
     <Compile Include="netfx\System\AppDomainData.cs" />
     <Compile Include="netfx\System\Collections\Generic\DictionaryGetOrAdd.cs" />
@@ -211,6 +216,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LoadingSpinner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
@@ -222,9 +231,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.props'))" />
     <Error Condition="!Exists('..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.targets'))" />
-    <Error Condition="!Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets'))" />
   </Target>
   <Import Project="..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.targets" Condition="Exists('..\packages\Clarius.VisualStudio.1.1.16\build\Clarius.VisualStudio.targets')" />
-  <Import Project="..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.33-pre\build\GitInfo.targets')" />
   <Import Project="..\Xamarin.Forms.Player.targets" />
+  <Import Project="..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.1.0.49-pre\build\GitInfo.targets')" />
 </Project>
