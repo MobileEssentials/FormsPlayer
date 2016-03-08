@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Forms Player by MobileEssentials</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Forms Player</h1>
+        <p>Xamarin Forms Player Demo</p>
+
+        <p class="view"><a href="https://github.com/MobileEssentials/FormsPlayer">View the Project on GitHub <small>MobileEssentials/FormsPlayer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/MobileEssentials/FormsPlayer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/MobileEssentials/FormsPlayer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/MobileEssentials/FormsPlayer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="xamarin-forms-player" class="anchor" href="#xamarin-forms-player" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Xamarin Forms Player</h1>
+
+<p>Provides real-time previewing of Xamarin.Forms XAML source in Visual Studio, by pushing the XAML to devices running a Xamarin.Forms.Player app.</p>
+
+<p>The extension provides a new <code>View | Other Windows | Xamarin Forms Player</code> command, that opens a Tool Window. The session ID shown in this window should be entered in the running Xamarin Forms Player mobile app, and that will connect both. This means that you can preview the XAML in more than one device at the same time.</p>
+
+<p><img src="https://raw.githubusercontent.com/MobileEssentials/FormsPlayer/master/src/FormsPlayer.Vsix/Resources/screen-1.png" alt="Visual Studio ToolWindow"></p>
+
+<p>To get the Xamarin.Forms.Player app on the device, either build it yourself <a href="https://github.com/MobileEssentials/FormsPlayer">from source</a> or create a new Xamarin.Forms app with whatever references you need to custom controls, control libraries, etc., and install the Xamarin.Forms.Player nuget package in it. Then replace the <code>new App()</code> instantiation with <code>new Xamarin.Forms.Player.App()</code> instead. That will bring in the player UI and enable all the rendering functionality automatically.</p>
+
+<p><img src="https://raw.githubusercontent.com/MobileEssentials/FormsPlayer/master/src/FormsPlayer.Vsix/Resources/screen-2.png" alt="Player on iOS"></p>
+
+<p><img src="https://raw.githubusercontent.com/MobileEssentials/FormsPlayer/master/src/FormsPlayer.Vsix/Resources/screen-3.png" alt="Player on Android"></p>
+
+<p>For Android, you can also grab a pre-built APK directly from the <a href="https://github.com/MobileEssentials/FormsPlayer/releases">Releases</a> page. The Visual Studio extension should match the version of the application.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/MobileEssentials">MobileEssentials</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
