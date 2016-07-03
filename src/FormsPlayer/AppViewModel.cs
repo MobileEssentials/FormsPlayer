@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using Microsoft.AspNet.SignalR.Client;
-using Refractored.Xam.Settings;
+using Plugin.Settings;
 
 namespace Xamarin.Forms.Player
 {

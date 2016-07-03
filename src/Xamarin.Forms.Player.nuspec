@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Xamarin.Forms.Player</id>
-		<version>0.1.8-pre</version>
+		<version>0.1.12-pre</version>
 		<authors>Daniel Cazzulino</authors>
 		<owners>Daniel Cazzulino</owners>
 		<licenseUrl>http://www.mobileessentials.org/license</licenseUrl>
@@ -12,12 +12,12 @@
 		<description>Preview Xamarin.Forms XAML on devices and simulators, with support for data-binding via JSON dummy view models.</description>
 		<copyright />
 		<dependencies>
-			<dependency id="Microsoft.AspNet.SignalR.Client" version="2.2.0"  />
+			<dependency id="Microsoft.Bcl.Build" version="1.0.21" />
 			<dependency id="Microsoft.Net.Http" version="2.2.28" />
 			<dependency id="Newtonsoft.Json" version="6.0.8" />
 			<dependency id="Xamarin.Forms" version="1.4.3.6358-pre2" />
-			<dependency id="Xamarin.Forms.Dynamic" version="0.1.13-pre" />
-			<dependency id="Xam.Plugins.Settings" version="1.5.1" />
+			<dependency id="Xamarin.Forms.Dynamic" version="0.1.18-pre" />
+			<dependency id="Xam.Plugins.Settings" version="2.1.0" />
 		</dependencies>
 	</metadata>
 	<files>

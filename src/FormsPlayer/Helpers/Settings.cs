@@ -1,6 +1,6 @@
 // Helpers/Settings.cs
-using Refractored.Xam.Settings;
-using Refractored.Xam.Settings.Abstractions;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 namespace Xamarin.Forms.Player.Helpers
 {
@@ -31,11 +31,11 @@ namespace Xamarin.Forms.Player.Helpers
     {
       get
       {
-        return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+        return AppSettings.GetValueOrDefault<string>(SettingsKey, SettingsDefault);
       }
       set
       {
-        AppSettings.AddOrUpdateValue(SettingsKey, value);
+        AppSettings.AddOrUpdateValue<string>(SettingsKey, value);
       }
     }
 
