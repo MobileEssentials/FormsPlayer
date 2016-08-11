@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Category _name="Forms Player" id="FormsPlayer">
+			<Command id="FormsPlayerXS.SessionId" _label="Session Id: Unavailable" defaultHandler="FormsPlayerXS.SessionIdHandler" />
+			<Command id="FormsPlayerXS.ConnetToPlayer" _label="Connect" _description="Connect to Forms Player" defaultHandler="FormsPlayerXS.FormsPlayerConnectHandler" />
+			<Command id="FormsPlayerXS.Publish" _label="Publish" _description="Send the file content" defaultHandler="FormsPlayerXS.PublishHandler" shortcut="Control|Shift|L" macShortcut="Meta|Shift|L" />
+		</Category>
+	</Extension>
+</ExtensionModel>

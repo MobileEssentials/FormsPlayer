@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Runtime>
+		<Import assembly="Newtonsoft.Json.dll" />
+		<Import assembly="Microsoft.AspNet.SignalR.Client.dll" />
+	</Runtime>
+	<Extension path="/MonoDevelop/Ide/MainMenu">
+		<ItemSet id="FormsPlayer" _label="Forms Player">
+			<CommandItem id="FormsPlayerXS.SessionId" />
+			<CommandItem id="FormsPlayerXS.ConnetToPlayer" />
+			<CommandItem id="FormsPlayerXS.Publish" />
+		</ItemSet>
+	</Extension>
+</ExtensionModel>
